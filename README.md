@@ -1,23 +1,15 @@
 # ActuallyDownloadSoundtrack
-This is where she makes a mod.
+Download Newgrounds song by direct link!
 
 <img src="logo.png" width="150" alt="the mod's logo" />
 
-*Update logo.png to change your mod's icon (please)*
+# What does this mod?
+Have you ever tried to click "Download soundtrack" in song info menu?
 
-## Getting started
-We recommend heading over to [the getting started section on our docs](https://docs.geode-sdk.org/getting-started/) for useful info on what to do next.
+<img src="resources/awesome-picture.png" width="350" alt='awesome picture of "download soundtrack' button>
 
-## Build instructions
-For more info, see [our docs](https://docs.geode-sdk.org/getting-started/create-mod#build)
-```sh
-# Assuming you have the Geode CLI set up already
-geode build
-```
+This button redirects you to the [Newgrounds](https://www.newgrounds.com/) song page.
 
-# Resources
-* [Geode SDK Documentation](https://docs.geode-sdk.org/)
-* [Geode SDK Source Code](https://github.com/geode-sdk/geode/)
-* [Geode CLI](https://github.com/geode-sdk/cli)
-* [Bindings](https://github.com/geode-sdk/bindings/)
-* [Dev Tools](https://github.com/geode-sdk/DevTools)
+But this mod makes this button redirect to a <strong>direct link</strong> for the song as .mp3 file [(Example)](https://audio.ngfiles.com/723000/723714_Epilogue.mp3)
+
+This also works with songs that hosted on Robtop's servers (like [music by Acid-Notation](https://geometrydashcontent.b-cdn.net/songs/708694.mp3))

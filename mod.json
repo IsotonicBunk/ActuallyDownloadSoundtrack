@@ -11,7 +11,16 @@
 	"version": "v1.0.0",
 	"developer": "isotonicbunk",
 	"description": "Download Newgrounds song by direct link!",
-	"dependencies": {
-		"geode.node-ids": ">=v1.23.3"
+	"settings": {
+		"enabled": {
+			"type": "bool",
+			"name": "Enabled",
+			"default": true
+		}
+	},
+	"resources": {
+		"files": [
+			"resources/awesome-picture.png"
+		]
 	}
 }
