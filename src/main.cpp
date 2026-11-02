@@ -4,27 +4,42 @@ using namespace geode::prelude;
 
 #include <Geode/modify/SongInfoLayer.hpp>
 
+
 class $modify(MySongInfoLayer, SongInfoLayer) {
     
-    bool init(gd::string songName, gd::string artistName, gd::string songURL, gd::string newgroundsURL, gd::string youtubeURL, gd::string facebookURL, int songID, gd::string songTags, int nongType) {
-        if (!SongInfoLayer::init(songName, artistName, songURL, newgroundsURL, youtubeURL, facebookURL, songID, songTags, nongType)) return false;
-        MusicDownloadManager::sharedState()->getSongInfo(songID, false);
-        return true;
-    }
-    void onDownload(CCObject* sender) {
-        if (!Mod::get()->getSettingValue<bool>("enabled")) return SongInfoLayer::onDownload(sender); // <- if disabled
-        if (!m_songID) return SongInfoLayer::onDownload(sender); // <- if not a custom song
-        auto song = MusicDownloadManager::sharedState()->getSongInfoObject(m_songID); 
+    
+
+    bool init(std::string name, std::string artist, std::vector<GJLinkObject> sogLinks, std::vector<GJLinkObject> artstLinks, int sogId, std::string p5, int p6) {
+
+        if (!Mod::get()->getSettingValue<bool>("enabled")) return SongInfoLayer::init(name, artist, sogLinks, artstLinks, sogId, p5, p6); // <- if disabled
+
+        if (!sogId) return SongInfoLayer::init(name, artist, sogLinks, artstLinks, sogId, p5, p6); // <- if not a custom song
+
+        auto song = MusicDownloadManager::sharedState()->getSongInfoObject(sogId); 
         if (!song) {
             log::error("Failed to get SongInfoObject!");
-            return;
+            Notification::create("Failed to get song info!", NotificationIcon::Error)->show();
+            return SongInfoLayer::init(name, artist, sogLinks, artstLinks, sogId, p5, p6);
         }
-        gd::string url = song->m_songUrl;
-        if (url == "") {
-            MusicDownloadManager::sharedState()->getSongInfo(m_songID, false);
-            log::warn("Failed to get song URL. Please try again!");
-        } else log::debug("song link is {}", song->m_songUrl); 
         
-        web::openLinkInBrowser(url);
+        std::string url = song->m_songUrl;
+        if (sogId >= 10000000) {
+            url = MusicDownloadManager::sharedState()->generateCustomContentURL(fmt::format("/music/{}.ogg", sogId)); // if a music from sound library
+        }
+        
+        if (url.empty()) {
+            MusicDownloadManager::sharedState()->getSongInfo(sogId, false);
+            log::warn("Failed to get song URL. Please try again!");
+            Notification::create("Failed to get song URL! Please try again!", NotificationIcon::Error)->show();
+            return SongInfoLayer::init(name, artist, sogLinks, artstLinks, sogId, p5, p6);
+        } else log::debug("song link is {}", song->m_songUrl); 
+
+        auto linkObj = GJLinkObject(); 
+        linkObj.m_link = url;
+        linkObj.m_title = "Download";
+        sogLinks.push_back(linkObj);
+
+        log::info("hiiii");
+        return SongInfoLayer::init(name, artist, sogLinks, artstLinks, sogId, p5, p6);
     }
 };

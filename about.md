@@ -1,16 +1,17 @@
-# ActuallyDownloadSoundtrack
+# Download Soundtrack
 Download Newgrounds song by direct link!
 
-# What does this mod?
-Have you ever tried to click "Download soundtrack" in song info menu?
+# About
+This mod adds a button in the song info menu that let you download the song by *direct link*
 
-![awesome picture of "download soundtrack" button](isotonicbunk.actually-download-soundtrack/awesome-picture.png)
+![awesome picture of "download soundtrack" button](isotonicbunk.actually-download-soundtrack/probably-even-more-awesome-picture-ig-idk.png)
 
-This button redirects you to the [Newgrounds](https://www.newgrounds.com/) song page. [(Example)](https://www.newgrounds.com/audio/listen/723714)
+# Examples
+This works with newgrounds songs. [(Example)](https://audio.ngfiles.com/723000/723714_Epilogue.mp3)
 
-But this mod makes this button redirect directly to the song file. [(Example)](https://audio.ngfiles.com/723000/723714_Epilogue.mp3)
+Also including the songs that moved to Robtop's servers. (like [music by Acid-Notation](https://geometrydashcontent.b-cdn.net/songs/708694.mp3))
 
-This also works with songs that hosted on Robtop's servers. (like [music by Acid-Notation](https://geometrydashcontent.b-cdn.net/songs/708694.mp3))
+And it also works with music from Sound Library and NCS. [(Example)](https://geometrydashfiles.b-cdn.net/music/10011140.ogg)
 
 ### Warning
-If button doesn't work at all, just try again later. This happens when song metadata is still loading.
+If it says "Failed to get song URL", just try again later. This happens when song data is still loading.
