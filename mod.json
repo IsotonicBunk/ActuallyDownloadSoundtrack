@@ -1,5 +1,5 @@
 {
-	"geode": "6.0.0-alpha.1",
+	"geode": "6.0.0-beta.1",
 	"gd": {
 		"win": "2.2091",
 		"android": "2.2091",
@@ -8,7 +8,7 @@
 	},
 	"id": "isotonicbunk.actually-download-soundtrack",
 	"name": "Download Soundtrack",
-	"version": "v1.0.2-beta.1",
+	"version": "v1.0.2",
 	"developer": "isotonicbunk",
 	"description": "Download Newgrounds song by direct link!",
 	"links": {
