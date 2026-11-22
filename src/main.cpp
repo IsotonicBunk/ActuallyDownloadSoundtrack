@@ -6,9 +6,6 @@ using namespace geode::prelude;
 
 
 class $modify(MySongInfoLayer, SongInfoLayer) {
-    
-    
-
     bool init(std::string name, std::string artist, std::vector<GJLinkObject> sogLinks, std::vector<GJLinkObject> artstLinks, int sogId, std::string p5, int p6) {
 
         if (!Mod::get()->getSettingValue<bool>("enabled")) return SongInfoLayer::init(name, artist, sogLinks, artstLinks, sogId, p5, p6); // <- if disabled
@@ -39,7 +36,6 @@ class $modify(MySongInfoLayer, SongInfoLayer) {
         linkObj.m_title = "Download";
         sogLinks.push_back(linkObj);
 
-        log::info("hiiii");
         return SongInfoLayer::init(name, artist, sogLinks, artstLinks, sogId, p5, p6);
     }
 };
