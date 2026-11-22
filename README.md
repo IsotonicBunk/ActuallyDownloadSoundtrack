@@ -1,5 +1,7 @@
-# ActuallyDownloadSoundtrack
+# Download Soundtrack
 Download Newgrounds song by direct link!
+
+**MacOS support is temporarely disabled** *(Probably until full Geode v6 release)*
 
 <img src="logo.png" width="150" alt="the mod's logo" />
 

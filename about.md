@@ -1,6 +1,8 @@
 # Download Soundtrack
 Download Newgrounds song by direct link!
 
+:exclaim: **MacOS support is temporarely disabled** *(Probably until full Geode v6 release)*
+
 # About
 This mod adds a button in the song info menu that let you download the song by *direct link*
 
